@@ -1,9 +1,9 @@
 <template>
   <div class="header">
     <div class="header-desc">
-      <h2 class="header-title">{{ title }}</h2>
-      <p>{{ subtitle }}</p>
-      <button v-if="showButton" class="custom-button">Belajar Sekarang</button>
+        <h2 class="header-title">{{ title }}</h2>
+        <p>{{ subtitle }}</p>
+        <button v-if="showButton" class="custom-button">Belajar Sekarang</button>
     </div>
     <img class="header-img" :src="pageImage" data-aos="fade-up" data-aos-anchor-placement="top-center"/>
   </div>

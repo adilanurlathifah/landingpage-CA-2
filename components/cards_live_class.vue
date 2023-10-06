@@ -9,18 +9,17 @@
           </div>
           <div class="col-9">
             <div class="row">
-              <b-card
-                v-for="course in displayedCourses"
-                :key="course.id"
-                :title="course.title"
-                :img-src="course.thumbnail ? course.thumbnail : defaultThumbnail"
-                img-top
-                tag="article"
-                class="mb-2"
-              >
+                <b-card
+                  v-for="course in displayedCourses"
+                  :key="course.id"
+                  :title="course.title"
+                  :img-src="course.thumbnail ? course.thumbnail : defaultThumbnail"
+                  img-top
+                  tag="article"
+                  class="mb-2"
+                >
                 <b-card-text style="font-size: 14px;">
                   {{ course.batch }}
-                  Rate: {{ course.rate }}
                 </b-card-text>
               </b-card>
             </div> 

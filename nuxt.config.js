@@ -77,6 +77,8 @@ export default {
         token: {
           property: "token",
           maxAge: 172800,
+          type: 'Bearer',
+          required: true,
         },
         user: {
           property: "data",
@@ -87,8 +89,6 @@ export default {
           logout: { url: "/api/logout", method: "get"},
           user: { url: "/api/user/profile", method: "get", propertyName: 'user'},
         },
-          tokenRequired: true,
-          tokenType: 'bearer',
           globalToken: true,
           autoFetchUser: true
       },
@@ -97,6 +97,18 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     baseURL: process.env.API_URL,
+  },
+  
+  publicRuntimeConfig: {
+    axios: {
+      browserBaseURL: process.env.BROWSER_BASE_URL
+    }
+  },
+
+  privateRuntimeConfig: {
+    axios: {
+      baseURL: process.env.BASE_URL
+    }
   },
   router: {
     middleware: ['auth'],

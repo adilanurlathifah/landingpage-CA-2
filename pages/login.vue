@@ -4,9 +4,9 @@
     <v-form ref="form" class="form-input card" @submit="handleSubmit" :form="form">
       <h5 class="login-title">Masuk Akun Member</h5>
       <div class="login-group">
-        <div class="text-subtitle-1 text-medium-emphasis" style="font-size: 12px">
+        <label class="text-subtitle-1 text-medium-emphasis" style="font-size: 12px">
           Email
-        </div>
+        </label>
         <v-text-field
           dense
           outlined
@@ -17,12 +17,12 @@
           v-model="auth.email"
           :rules="auth.emailRules"
         ></v-text-field>
-        <div
+        <label
           class="text-subtitle-1 text-medium-emphasis d-flex align-center justify-space-between"
           style="font-size: 12px; margin-top: -10px;"
         >
           Password
-        </div>
+        </label>
         <v-text-field
           dense
           outlined

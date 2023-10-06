@@ -20,17 +20,9 @@
         </b-navbar-nav>
         
         <div class="button">
-
-          <div v-if="$auth.loggedIn">
-            {{ $auth.user.email }}
-            <v-btn text>Logout</v-btn>
-          </div>
-          <div v-else>
             <v-btn style="text-transform: capitalize;" class="masuk-button" text to="/login">Masuk</v-btn>
             <v-btn style="text-transform: capitalize;" class="daftar-button" text to="/register">Daftar</v-btn>
           </div>
-
-        </div>
       </b-collapse>
     </b-navbar>
   </div>
