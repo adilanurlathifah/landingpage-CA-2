@@ -40,7 +40,7 @@ export default {
     '@nuxtjs/vuetify',
   ],
   env: {
-      API_URL: process.env.API_URL || 'https://api-dev.cyberwarrior.id'
+      API_URL: process.env.API_URL || 'https://api.cyberwarrior.id/'
   },
   fontawesome: {
     component: 'fa',
@@ -70,36 +70,38 @@ export default {
     },
     token: {
       prefix: "_token.", 
+      global: true,
     },
     strategies: {
       local: {
         scheme: "local",
-        token: {
-          property: "token",
-          maxAge: 172800,
-          type: 'Bearer',
-          required: true,
-        },
         user: {
           property: "data",
-          autoFetch: true,
+          autoFetch: false,
+        },
+        token: {
+          property: "auth.token",
+          maxAge: 172800,
         },
         endpoints: {
-          login: { url: "/api/login", method: "post", propertyName: 'token'},
+          login: { url: "/api/login", method: "post"},
           logout: { url: "/api/logout", method: "get"},
-          user: { url: "/api/user/profile", method: "get", propertyName: 'user'},
+          user: { url: "/api/user/profile", method: "get", withCredentials: true},
         },
-          globalToken: true,
-          autoFetchUser: true
+        tokenRequired: true,
+        tokenType: 'Bearer',
+        autoFetchUser: false,
       },
     },
   },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
+    headers: {
+      "X-Requested-With": "XMLHttpRequest",
+    },
     baseURL: process.env.API_URL,
   },
   router: {
-    middleware: ['auth'],
     extendRoutes(routes, resolve) {
       routes.push({
           name: 'homepage-user',
@@ -107,6 +109,7 @@ export default {
           component: resolve(__dirname, 'pages/homepage.vue'),
         });
     },
+    middleware: ['auth'],
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

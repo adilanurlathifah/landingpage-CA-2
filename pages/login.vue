@@ -84,6 +84,7 @@ export default {
       auth: {
         email: "",
         password: "",
+        token: "",
         // emailRules: [
         //   (v) => !!v || "field is required",
         //   (v) => /.+@.+/.test(v) || "email must be valid format",
@@ -103,29 +104,29 @@ export default {
       if (form.validate()) {
         const url = "/api/login";
         const data = { 
-          ...this.auth, 
+          ...this.auth,
         };
         this.postData(data, url);
       }
     },
     async postData(data, url) {
-      let token;
       try {
-        token = await this.$getToken(process.env.API_URL + url);
-        if (token.status) {
-          const loginData = { ...data, token: token.data };
+        const tokenResponse = await this.$getToken(url);
+        if (tokenResponse.status) {
+          const token = tokenResponse.data.token;
+          const loginData = { ...data, token }; 
           const login = await this.$auth.loginWith('local', {
             data: loginData,
           });
           const response = login.data;
           if (response.success) {
-            const token = response.data.token;
+            this.auth.token = token;
             this.setProfile(token);
           } else {
             this.$message.error(response.message);
           }
         } else {
-          this.$message.error(token.message);
+          this.$message.error(tokenResponse.message);
         }
       } catch (err) {
         alert('something went wrong, please try again.');
@@ -135,13 +136,20 @@ export default {
       try {
         const response = await this.$auth.setUserToken(token);
         if (response.data.success) {
+          this.$auth.setUserToken('local', token);
           this.$router.push("/homepage");
         } else {
           this.$router.push("/login");
         }
       } catch (err) {
-        const error = this.$errorHandle(err);
-        this.$message.error(error.message);
+        console.error("Error setting user profile:", err);
+        if (err.response && err.response.status === 401) {
+          alert("Unauthorized access. Please login again.");
+        } else if (err.response && err.response.status === 500) {
+          alert("Internal server error. Please try again later.");
+        } else {
+          alert("Something went wrong. Please try again later.");
+        }
       }
     },
   },
