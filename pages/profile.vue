@@ -6,24 +6,31 @@
 
 <script>
 import apiHelpers from "~/mixins/apiHelpers";
+import { mapState } from "vuex";
+
 export default {
+  name: "Profile",
   middleware: 'auth',
-  mixins: [apiHelpers],
+  computed: {
+    ...mapState(["authData"]),
+  },
   mounted() {
-    this.getProfile();
+    const token = this.authData.token;
+    console.log("Token:", token);
+    this.getProfile(token);
   },
   methods: {
-    async getProfile() {
+    async getProfile(token) {
       try {
         const response = await this.$axios.$get(
           "/api/user/profile",
-          this.getHeaderAuth()
+          { headers: { Authorization: `Bearer ${token}` } }
         );
-        this.$auth.setUser(response.data);
-      } catch (error) {
-        this.$message.error("Internal Server Error");
+        console.log("Profile:", response);
+      } catch (err) {
+        console.log("Error:", err);
       }
     },
   },
-}
+};
 </script>

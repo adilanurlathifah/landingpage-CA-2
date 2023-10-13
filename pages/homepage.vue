@@ -7,6 +7,5 @@
 <script>
 export default {
   middleware: 'auth',
-  auth: 'guest'
 }
 </script>

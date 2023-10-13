@@ -30,6 +30,7 @@ export default {
   plugins: [
     { src: "~/plugins/aos", ssr: false },
     { src: "@/services/get-access-token", mode: "client" },
+    { src: '~/plugins/axios'}
   ],
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -55,7 +56,7 @@ export default {
     'bootstrap-vue/nuxt', 
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    '@nuxtjs/auth'
+    '@nuxtjs/auth-next'
   ],
   auth: {
     watchLoggedIn: false,
@@ -84,9 +85,9 @@ export default {
           maxAge: 172800,
         },
         endpoints: {
-          login: { url: "/api/login", method: "post"},
-          logout: { url: "/api/logout", method: "get"},
-          user: { url: "/api/user/profile", method: "get", withCredentials: true},
+          login: { url: "/api/login", method: "post", propertyName: "auth.token"},
+          logout: { url: "/api/logout", method: "post"},
+          user: { url: "/api/user/profile", method: "get", withCredentials: true, propertyName: "auth"},
         },
         tokenRequired: true,
         tokenType: 'Bearer',
@@ -114,5 +115,8 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     vendor: ['aos'],
+    transpile: [
+      'defu'
+    ]
   },
 }

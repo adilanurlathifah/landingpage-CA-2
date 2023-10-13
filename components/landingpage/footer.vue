@@ -138,7 +138,7 @@ export default {
   color: #161f62;
   margin-top: -30px;
   padding: 5px;
-  z-index: 2;
+  z-index: 0;
 }
 .footer-top .row .col-xs-12.col-md-9 {
   background-color: #F6F8FF;

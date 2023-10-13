@@ -114,14 +114,14 @@ export default {
         const tokenResponse = await this.$getToken(url);
         if (tokenResponse.status) {
           const token = tokenResponse.data.token;
-          const loginData = { ...data, token }; 
+          const loginData = {...data, token }; 
           const login = await this.$auth.loginWith('local', {
             data: loginData,
           });
           const response = login.data;
           if (response.success) {
-            this.auth.token = token;
-            this.setProfile(token);
+           const tokenLogin = response.data.token;
+            this.setProfile(tokenLogin);
           } else {
             this.$message.error(response.message);
           }
@@ -135,16 +135,15 @@ export default {
     async setProfile(token) {
       try {
         const response = await this.$auth.setUserToken(token);
+        console.log(this.$auth.strategy.token.get());
         if (response.data.success) {
-          this.$auth.setUserToken('local', token);
-          this.$router.push("/homepage");
-        } else {
-          this.$router.push("/login");
-        }
+            this.$router.push("/profile");
+          } else {
+            this.$router.push("/homepage");
+          }
       } catch (err) {
-        console.error("Error setting user profile:", err);
         if (err.response && err.response.status === 401) {
-          alert("Unauthorized access. Please login again.");
+          alert("This set from Login.vue");
         } else if (err.response && err.response.status === 500) {
           alert("Internal server error. Please try again later.");
         } else {

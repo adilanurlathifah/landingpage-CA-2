@@ -1,7 +1,7 @@
 export default {
   computed: {
     role() {
-      return "local1";
+      return "local";
     },
   },
   methods: {
@@ -12,10 +12,12 @@ export default {
         .catch(failHandler);
     },
     getHeaderAuth() {
+      const token = this.$auth.strategy.token.get();
+      console.log("Token:", token);
       return {
-        headers: { Authorization: this.$auth.strategy.token.get() },
+        headers: { Authorization: token },
       };
-    },
+    },    
     getTokenAuth() {
       return this.$auth.strategy.token.get();
     },
