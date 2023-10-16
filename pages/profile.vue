@@ -1,36 +1,37 @@
 <template>
-  <div>
+  <div class="profile">
     <h1>Welcome to Profile Page</h1>
+    <div class="button">
+      <v-btn @click="logout" style="text-transform: capitalize;" class="daftar-button" text to="/login">Logout</v-btn>
+    </div>
   </div>
 </template>
-
 <script>
-import apiHelpers from "~/mixins/apiHelpers";
-import { mapState } from "vuex";
-
 export default {
-  name: "Profile",
   middleware: 'auth',
-  computed: {
-    ...mapState(["authData"]),
-  },
-  mounted() {
-    const token = this.authData.token;
-    console.log("Token:", token);
-    this.getProfile(token);
-  },
   methods: {
-    async getProfile(token) {
-      try {
-        const response = await this.$axios.$get(
-          "/api/user/profile",
-          { headers: { Authorization: `Bearer ${token}` } }
-        );
-        console.log("Profile:", response);
-      } catch (err) {
-        console.log("Error:", err);
-      }
-    },
-  },
-};
+    logout() {
+      this.$auth.logout({
+        redirect: {
+          name: 'login'
+        }
+      })
+    }
+  }
+}
 </script>
+<style>
+.profile h1 {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 100px;
+}
+
+.button {
+  display: flex;
+  margin-left: auto;
+  margin-right: 0px;
+  align-items: center;
+}
+</style>

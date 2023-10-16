@@ -22,7 +22,7 @@
         <div class="button">
             <v-btn style="text-transform: capitalize;" class="masuk-button" text to="/login">Masuk</v-btn>
             <v-btn style="text-transform: capitalize;" class="daftar-button" text to="/register">Daftar</v-btn>
-          </div>
+        </div>
       </b-collapse>
     </b-navbar>
   </div>

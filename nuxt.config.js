@@ -86,8 +86,8 @@ export default {
         },
         endpoints: {
           login: { url: "/api/login", method: "post", propertyName: "auth.token"},
-          logout: { url: "/api/logout", method: "post"},
-          user: { url: "/api/user/profile", method: "get", withCredentials: true, propertyName: "auth"},
+          logout: { url: "/api/logout", method: "get"},
+          user: { url: "/api/users", method: "get", withCredentials: true, propertyName: "auth"},
         },
         tokenRequired: true,
         tokenType: 'Bearer',
@@ -105,9 +105,9 @@ export default {
   router: {
     extendRoutes(routes, resolve) {
       routes.push({
-          name: 'homepage-user',
-          path: '/homepage',
-          component: resolve(__dirname, 'pages/homepage.vue'),
+          name: 'profile-user',
+          path: '/profile',
+          component: resolve(__dirname, 'pages/profile.vue'),
         });
     },
     middleware: ['auth'],
