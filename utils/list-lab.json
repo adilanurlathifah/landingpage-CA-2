@@ -1,0 +1,60 @@
+{
+     "LABS": [
+          {
+               "title": "Totobu",
+               "type_lab": "Web",
+               "total_flag": 5,
+               "level": "easy",
+               "thumbnail": "~/assets/img/lab/totobu.jpg"
+          },
+          {
+               "title": "Tombak",
+               "type_lab": "Web",
+               "total_flag": 5,
+               "level": "medium",
+               "thumbnail": "https://dev-public-lab.s3.ap-southeast-1.amazonaws.com/thumbnail/lab_thumbnail_1656483789.jpg"
+          },
+          {
+               "title": "Siwar",
+               "type_lab": "Web",
+               "total_flag": 5,
+               "level": "high",
+               "thumbnail": "https://dev-public-lab.s3.ap-southeast-1.amazonaws.com/thumbnail/lab_thumbnail_1655610024.jpg"
+          },
+          {
+               "title": "Karambiak",
+               "type_lab": "services",
+               "total_flag": 5,
+               "level": "medium",
+               "thumbnail": "https://dev-public-lab.s3.ap-southeast-1.amazonaws.com/thumbnail/lab_thumbnail_1655609766.jpg"
+          },
+          {
+               "title": "Kandik",
+               "type_lab": "web",
+               "total_flag": 5,
+               "level": "easy",
+               "thumbnail": "https://dev-public-lab.s3.ap-southeast-1.amazonaws.com/thumbnail/lab_thumbnail_1655609707.jpg"
+          },
+          {
+               "title": "Rencong",
+               "type_lab": "services",
+               "total_flag": 5,
+               "level": "medium",
+               "thumbnail": "https://dev-public-lab.s3.ap-southeast-1.amazonaws.com/thumbnail/lab_thumbnail_1655609482.jpg"
+          },
+          {
+               "title": "Mandau",
+               "type_lab": "services",
+               "total_flag": 5,
+               "level": "medium",
+               "thumbnail": "https://dev-public-lab.s3.ap-southeast-1.amazonaws.com/thumbnail/lab_thumbnail_1655608121.jpg"
+          },
+          {
+               "title": "Karih",
+               "type_lab": "services",
+               "total_flag": 5,
+               "level": "medium",
+               "thumbnail": "https://dev-public-lab.s3.ap-southeast-1.amazonaws.com/thumbnail/lab_thumbnail_1655608770.jpg"
+          }
+     ]
+}

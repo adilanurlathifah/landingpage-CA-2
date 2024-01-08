@@ -1,11 +1,21 @@
 <template>
   <div class="header">
-    <div class="header-desc">
-        <h2 class="header-title">{{ title }}</h2>
-        <p>{{ subtitle }}</p>
-        <button v-if="showButton" class="custom-button">Belajar Sekarang</button>
-    </div>
-    <img class="header-img" :src="pageImage" data-aos="fade-up" data-aos-anchor-placement="top-center"/>
+    <div
+        class="row col-lg-10 col-md-10 col-sm-12 mx-auto pt-5 flex-lg-row flex-column-reverse">
+        <b-col md="6" sm="12" class="pl-2 pr-0 align-self-center">
+          <h2 style="font-weight: 700;"> {{ title }}</h2>
+          <p style="font-size: 16px;"> {{ subtitle }} </p>
+          <button v-if="showButton" class="custom-button">Belajar Sekarang</button>
+        </b-col>
+        <b-col md="6" sm="12">
+          <b-img
+            :src=pageImage
+            style="max-height:400px; width:auto; max-width:100%"
+            alt="Responsive image"
+            data-aos="fade-up"
+          ></b-img>
+        </b-col>
+      </div>
   </div>
 </template>
 
@@ -25,42 +35,6 @@ export default {
 
 
 <style>
-.header {
-  display: flex;
-  align-items: center;
-  padding: 0 10%;
-  margin-top: 50px;
-}
-
-.header-desc {
-  flex-direction: column;
-  flex: 1;
-}
-
-.header-desc .header-title {
-  font-size:27px;
-  line-height: 30px;
-  word-spacing: 1px;
-  margin-top: 50px;
-}
-
-.header-desc p {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 25px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.header-img {
-  height: 450px;
-  margin-top: 60px;
-  padding: 8px;
-  max-width: 100%;
-  margin-left: 30px;
-  transition-duration: 2s;
-}
-
 .custom-button {
   background-color: #2839bc;
   color: white;
@@ -77,4 +51,10 @@ export default {
   color: white;
   transition-duration: 0.5s;
 }
+
+/* @media (min-width: 960px) {
+  .col-md-12 {
+      margin-top: 50px;
+  }
+} */
 </style>

@@ -4,9 +4,9 @@
       <p>{{ subtitle }}</p>
       <b-container fluid>
         <b-row>
-          <b-col cols="12" md="6">
+          <b-col cols md="6" sm="12">
             <div class="grid-item d-flex-1">
-              <img src="~/assets/thumbnail-benefit.png" class="mr-3" />
+              <img src="~/assets/img/thumbnail-benefit.png" class="mr-3" />
               <div class="grid-item-text">
                 <h3>Kelas Berbahasa Indonesia</h3>
                 <p>Setiap Materi disampaikan dalam Bahasa Indonesia</p>
@@ -15,7 +15,7 @@
           </b-col>
           <b-col cols="12" md="6">
             <div class="grid-item d-flex-2">
-              <img src="~/assets/thumbnail-benefit-2.png" class="mr-3" />
+              <img src="~/assets/img/thumbnail-benefit-2.png" class="mr-3" />
               <div class="grid-item-text">
                 <h3>Cybersecurity Lab</h3>
                 <p>Kamu dapat berlatih secara teknis dengan CTF Lab dan Exercise Lab.</p>
@@ -26,7 +26,7 @@
         <b-row>
           <b-col cols="12" md="6">
             <div class="grid-item d-flex-1">
-              <img src="~/assets/thumbnail-benefit-3.png" class="mr-3" />
+              <img src="~/assets/img/thumbnail-benefit-3.png" class="mr-3" />
               <div class="grid-item-text">
                 <h3>Waktu Belajar Fleksibel</h3>
                 <p>Kamu dapat belajar Kapanpun dan dimanapun dengan akses selamanya</p>
@@ -35,7 +35,7 @@
           </b-col>
           <b-col cols="12" md="6">
             <div class="grid-item d-flex-2">
-              <img src="~/assets/thumbnail-benefit-4.png" class="mr-3" />
+              <img src="~/assets/img/thumbnail-benefit-4.png" class="mr-3" />
               <div class="grid-item-text">
                 <h3>Diskusi dengan Pengajar</h3>
                 <p>Diskusikan kesulitan Kamu dengan Pengajar sampai bisa</p>
@@ -46,7 +46,7 @@
         <b-row>
           <b-col cols="12" md="6">
             <div class="grid-item d-flex-1">
-              <img src="~/assets/thumbnail-benefit-5.png" class="mr-3" />
+              <img src="~/assets/img/thumbnail-benefit-5.png" class="mr-3" />
               <div class="grid-item-text">
                 <h3>Sertifikat Penyelesaian</h3>
                 <p>
@@ -58,7 +58,7 @@
           </b-col>
           <b-col cols="12" md="6">
             <div class="grid-item d-flex-2">
-              <img src="~/assets/thumbnail-benefit-6.png" class="mr-3" />
+              <img src="~/assets/img/thumbnail-benefit-6.png" class="mr-3" />
               <div class="grid-item-text">
                 <h3>Sertifikat Kompetensi</h3>
                 <p>

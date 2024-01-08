@@ -9,15 +9,15 @@
       >
         <b-carousel-slide
           class="slider-1"
-          img-src="~/assets/promo-september.jpg"
+          img-src="~/assets/img/promo-september.jpg"
         ></b-carousel-slide>
         <b-carousel-slide
           class="slider-2"
-          img-src="~/assets/reward-banner.jpg"
+          img-src="~/assets/img/reward-banner.jpg"
         ></b-carousel-slide>
         <b-carousel-slide
           class="slider-3"
-          img-src="~/assets/banner-promo.png"
+          img-src="~/assets/img/banner-promo.png"
         ></b-carousel-slide>
       </b-carousel>
     </div>
@@ -58,8 +58,8 @@ width: 960px;
 
 img {
 display: block;
-margin: 0 auto;
+margin: 0;
 max-height: 100%;
-border-radius: 10px;
+/* border-radius: 10px; */
 }
 </style>

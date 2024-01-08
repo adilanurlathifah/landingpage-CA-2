@@ -1,9 +1,9 @@
 <template>
   <div class="footer-top">
     <div class="row">
-      <div v-if="showFooterTop" class="col-xs-12 col-md-9" style="margin-bottom: 100px;">
-        <h2 data-aos="fade-up">Mulai Membangun Keahlian Cyber Security Kamu Hari ini!</h2>
-        <button v-if="showButton" class="custom-button">Buat Akun Sekarang</button>
+      <div v-if="showFooterTop" class="col-12 d-flex flex-column justify-content-center" style="margin-bottom: 100px; margin-top: 100px;">
+        <h2 class="text-center" data-aos="fade-up">Mulai Membangun Keahlian Cyber Security Kamu Hari ini!</h2>
+        <button v-if="showButton" class="align-self-center custom-button" style="text-align: center;">Buat Akun Sekarang</button>
       </div>
     </div>
   <footer class="footer">
@@ -31,7 +31,7 @@
         </b-col>
       </b-row>
     </b-container>
-    <p>© 2023 PT Global Inovasi Siber Indonesia | Powered by <a href="https://www.cyberarmy.id/" style="color: rgb(36, 111, 198);">CyberArmyID</a></p>
+    <p style="text-align: center;">© 2023 PT Global Inovasi Siber Indonesia | Powered by <a href="https://www.cyberarmy.id/" style="color: rgb(36, 111, 198);">CyberArmyID</a></p>
   </footer>
 </div>
 </template>
@@ -55,34 +55,34 @@ export default {
           name: "Facebook",
           link: "https://www.facebook.com/cyberacademyid",
           iconClass: "fab fa-facebook",
-          imageURL: require("~/assets/ic_facebook.svg"),
+          imageURL: require("~/assets/img/icon/ic_facebook.svg"),
         },
         {
           name: "Instagram",
           link: "https://www.instagram.com/cyberacademyid/",
           iconClass: "fab fa-instagram",
-          imageURL: require("~/assets/ic_instagram.svg"),
+          imageURL: require("~/assets/img/icon/ic_instagram.svg"),
         },
         {
           name: "Linkedin",
           link: "https://www.linkedin.com/company/cyberacademyid/",
           iconClass: "fab fa-linkedin",
-          imageURL: require("~/assets/ic_linkedin.svg"),
+          imageURL: require("~/assets/img/icon/ic_linkedin.svg"),
         },
         {
           name: "Youtube",
           link: "https://www.youtube.com/@CyberAcademyID",
           iconClass: "fab fa-youtube",
-          imageURL: require("~/assets/ic_youtube.svg"),
+          imageURL: require("~/assets/img/icon/ic_youtube.svg"),
         },
         {
           name: "Tiktok",
           link: "https://www.tiktok.com/@cyberacademyid",
           iconClass: "fab fa-tiktok",
-          imageURL: require("~/assets/ic_tiktok.svg"),
+          imageURL: require("~/assets/img/icon/ic_tiktok.svg"),
         },
       ],
-      imageURL: require("~/assets/kominfo.png"),
+      imageURL: require("~/assets/img/icon/kominfo.png"),
       columns: [
         {
           title: "Cyber Army Indonesia",
@@ -135,33 +135,33 @@ export default {
 .footer {
   display: flex;
   flex-direction: column;
-  color: #161f62;
+  color: white;
   margin-top: -30px;
   padding: 5px;
   z-index: 0;
 }
-.footer-top .row .col-xs-12.col-md-9 {
-  background-color: #F6F8FF;
+
+.footer-content {
+  justify-content: center;
+}
+.footer-top .row .col-12 {
+  background-color: #223097;
   width: 100%; 
   padding: 40px;
-  margin-left: 160px;
+
 }
 
-.col-xs-12.col-md-9 {
+.col-12 {
   text-align: center;
 }
 
-.col-xs-12.col-md-9 h2 {
+.col-12 h2 {
   font-size: 29px;
   font-weight: 700;
   margin-bottom: 30px;
   transition-duration: 1s;
 }
 
-.footer-content {
-  margin-left: 150px;
-  margin-right: -50px;
-}
 
 ul {
   list-style: none;
@@ -182,7 +182,7 @@ h4 {
 }
 
 a {
-  color: #161f62;
+  color: white;
   font-size: 15px;
   text-decoration: none;
 }
@@ -220,18 +220,18 @@ a:hover {
   margin-top: auto;
 }
 
-.footer-top .row .col-xs-12.col-md-9 .custom-button {
+.custom-button {
+  width: 100%;
+  max-width: 250px;
   background-color: #2839bc;
   color: white;
-  border: 0.75px solid #2839bc;
   border-radius: 5px;
-  padding: 10px 60px;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 14px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
 }
 
-.footer-top .row .col-xs-12.col-md-9 .custom-button:hover {
+.custom-button:hover {
   background: #2070f2;
   color: white;
   transition-duration: 0.5s;

@@ -4,7 +4,7 @@
     </button>
     <VueSlickCarousel :arrows="true" ref="carousel" v-bind="settings" class="slider">
       <div v-for="(image, index) in images" :key="index" class="logo-container">
-        <img :src="require(`@/assets/logo/${image}.png`)" />
+        <img :src="require(`@/assets/img/logo/${image}.png`)" />
       </div>
     </VueSlickCarousel>
     <button @click="showNext" type="button" class="slick-arrow slick-next" style="display: block;">

@@ -49,7 +49,7 @@
       </div>
       <button type="button" class="btn-google">
         <span class="btn-google-logo">
-          <img src="~/assets/ic_google.png" width="20px" height="20px" />
+          <img src="~/assets/img/ic_google.png" width="20px" height="20px" />
         </span>
         <span style="font-size: 12px; font-weight: 600; margin-left: 10px;"
           >Masuk dengan Google</span

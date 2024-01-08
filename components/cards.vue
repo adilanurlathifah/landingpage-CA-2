@@ -35,7 +35,7 @@
     data() {
       return {
         courses: [],
-        defaultThumbnail: '~/assets/default-thumbnail.png'
+        defaultThumbnail: '~/assets/img/no-image.png'
       }
     },
     computed: {
