@@ -71,10 +71,9 @@ export default {
   margin-left: 10px;
 }
 
-.logo-img-2 {
-  height: 25px;
-  width: 100%;
-}
+/* .logo-img-2 {
+  
+} */
 
 .navbar .container {
   position: sticky;
@@ -141,7 +140,8 @@ a:hover {
 @media  (min-width: 500px) {
   .logo-img-2 {
     height: 30px;
-    width: 100%;
+    width: 120px;
+    margin-right: 20px;
     margin-top: 10px;
   }
 
@@ -155,6 +155,9 @@ a:hover {
 /* medium */
 @media (min-width: 768px) {  
   .logo-img-2 {
+    height: 30px;
+    width: 120px;
+    margin-right: 20px;
     margin-top: 10px;
   }
 
@@ -197,7 +200,9 @@ a:hover {
 /* large */
 @media (min-width: 992px) {
   .logo-img-2 {
-    margin-top: 12px;
+    height: 30px;
+    width: 120px;
+    margin-right: 20px;
   }
 
   .logo-container {
@@ -230,6 +235,7 @@ a:hover {
     font-size: 15px;
     margin-right: 20px;
     margin-top: 5px;
+    margin-left: 150px;
     justify-content: space-between;
   }
 
