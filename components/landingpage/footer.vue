@@ -130,23 +130,35 @@ export default {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  margin-top: -50px;
+  margin-top: -90px;
+}
+
+.footer-top h2 {
+  color: var(--text-color);
+}
+.footer-top h4 {
+  color: var(--text-color);
 }
 .footer {
   display: flex;
+  background-color: var(--bg-cda);
   flex-direction: column;
-  color: white;
-  margin-top: -30px;
+  margin-top: -90px;
   padding: 5px;
   z-index: 0;
+}
+
+.footer p {
+  color: var(--text-color);
 }
 
 .footer-content {
   justify-content: center;
 }
 .footer-top .row .col-12 {
-  background-color: #223097;
+  background-color: var(--bg-container-2);
   width: 100%; 
+  height: 250px;
   padding: 40px;
 
 }
@@ -182,7 +194,7 @@ h4 {
 }
 
 a {
-  color: white;
+  color: var(--text-color);
   font-size: 15px;
   text-decoration: none;
 }

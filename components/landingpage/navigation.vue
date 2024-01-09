@@ -1,6 +1,6 @@
 <template>
   <div class="fixed-top">
-    <b-navbar toggleable="lg" type="dark">
+    <b-navbar toggleable="lg">
       <div class="navbar container">
         <div class="logo-container">
           <nuxt-link to="/">
@@ -8,7 +8,6 @@
               <img class="logo-img" :src="showLogoCda ? require('~/assets/img/cda.png') : require('~/assets/img/cda_white.png')" alt="CDA Logo">
             </b-navbar-brand>
           </nuxt-link>
-
           <b-navbar-brand>
             <img class="logo-img-2" :src="showSwp ? require('~/assets/img/swp.png') : require('~/assets/img/swp_white.png')" alt="CDA Logo">
           </b-navbar-brand>
@@ -16,7 +15,6 @@
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse class="nav-collapse" id="nav-collapse" is-nav>
         <b-navbar-nav>
-
           <b-nav-item-dropdown text="Academy" left>
             <b-dropdown-item class="border-bottom" href="#">Belajar Online</b-dropdown-item>
             <b-dropdown-item class="border-bottom" href="#">
@@ -38,8 +36,8 @@
             </nuxt-link>
           </b-navbar-nav>
         </b-navbar-nav>
-
         <div class="button-container">
+            <ThemeButton style="margin-top: 20px; margin-right: 50px;"/>
             <b-button class="masuk-button">Masuk</b-button>
             <b-button class="daftar-button">Daftar</b-button>
         </div>
@@ -50,7 +48,10 @@
 </template>
 
 <script>
+import ThemeButton from '~/components/theme_button.vue';
+
 export default {
+  components: { ThemeButton },
   props: {
       showLogoCda: {
         type: Boolean,
@@ -68,60 +69,69 @@ export default {
 .logo-img {
   width: 140px;
   height: 100%;
-  margin-left: 10px;
 }
 
-/* .logo-img-2 {
-  
-} */
+.logo-container {
+    height: 80px;
+    width: 150px;
+    object-fit: contain;
+}
 
-.navbar .container {
-  position: sticky;
+.navbar {
+  background-color: var(--additional-color);
+  position: fixed;
   top: 0;
-  z-index: 2;
-  /* width: 100%; */
+  width: 100%;
   height: 80px;
+}
+
+.navbar-light .navbar-toggler {
+  margin-top: -20px;
 }
 
 a:hover {
   text-decoration: none;
 }
 
-.navbar-dark .navbar-nav .nav-link {
-  color: white;
+.navbar-light .navbar-nav .nav-link {
+  color: var(--text-color-4);
+  font-weight: 600;
+  margin-top: 14px;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: var(--accent-color-2);
 }
 
 .masuk-button {
-  color: white;
+  color: var(--btn-color);
   background-color: transparent;
-  outline: 1px solid white;
+  outline: 1px solid var(--btn-color);
   padding: 8px 22px;
   font-size: 14px;
   text-decoration: none;
   font-weight: 600;
-  margin-top: 0px;
 }
 
 .daftar-button {
-  background: white;
+  background: var(--btn-color);
   border-radius: 5px;
-  color: #161D2A;
+  color: var(--text-color-2);
   text-decoration: none;
   outline: none;
-  margin-left: 30px;
   padding: 8px 22px;
   font-size: 14px;
   font-weight: 600;
 }
 
 .masuk-button:hover {
-  background: white;
-  color: #161D2A;
+  background: var(--btn-color);
+  color: var(--text-color-2);
 }
 
 .daftar-button:hover {
-  background: #161D2A;
-  color: white;
+  background: var(--btn-color);
+  color: var(--text-color-2);
 }
 
 .live-class-container {
@@ -150,6 +160,14 @@ a:hover {
     flex-direction: row;
     align-items: top;
   }
+
+  .nav-collapse {
+    background-color: var(--bg-cda);
+    margin-top: -20px;
+    z-index: 2;
+    padding: 20px;
+    margin-right: 10px;
+  }
 }
 
 /* medium */
@@ -168,7 +186,7 @@ a:hover {
   }
 
   .nav-collapse {
-    margin-top: 21px;
+    background-color: var(--bg-cda);
     z-index: 2;
     padding: 20px;
     margin-right: 10px;
@@ -211,20 +229,22 @@ a:hover {
     justify-content: left;
     align-items: top;
     margin-top: 10px;
+    margin-left: 90px;
   }
 
-  .navbar .container {
+  /* .navbar .container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-top: -5px;
     margin-left: 60px;
-  }
+  } */
 
   .button-container {
     display: flex;
     flex-direction: row;
     padding-left: 20px;
+    /* margin-top: 15px; */
   }
 
   .daftar-button {
@@ -234,7 +254,7 @@ a:hover {
   .nav-collapse {
     font-size: 15px;
     margin-right: 20px;
-    margin-top: 5px;
+    margin-top: -17px;
     margin-left: 150px;
     justify-content: space-between;
   }

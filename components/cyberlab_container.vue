@@ -140,28 +140,29 @@
 <style>
 
 .card-container {
-    background-color: #1E2739;
+    background-color: var(--card-color);
 }
 
 .cyberlab-container {
     width: 100%;
-    margin-top: 50px;
-    background-color: #121926;
+    background-color: var(--bg-container);
+    margin-bottom: -20px;
 }
 
 .cyberlab-container h2 {
     font-size: 24px;
     font-weight: bolder;
+    color: var(--text-color);
 }
 .cyberlab-container h4 {
     margin-top: 15px;
-    color: white;
+    color: var(--text-color);
     font-weight: 700;
     font-size: 20px;
 }
 
 .cyberlab-container p {
-    color: white;
+    color: var(--text-color);
     font-size: 14px;
 }
 
