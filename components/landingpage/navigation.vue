@@ -3,13 +3,18 @@
     <b-navbar toggleable="lg">
       <div class="navbar container">
         <div class="logo-container">
+          <!-- dynamic logo -->
           <nuxt-link to="/">
             <b-navbar-brand>
-              <img class="logo-img" :src="showLogoCda ? require('~/assets/img/cda.png') : require('~/assets/img/cda_white.png')" alt="CDA Logo">
+              <span>
+                <img class="logo-img" v-bind:src="logoCDASrc" alt="CDA Logo">
+              </span>
             </b-navbar-brand>
           </nuxt-link>
           <b-navbar-brand>
-            <img class="logo-img-2" :src="showSwp ? require('~/assets/img/swp.png') : require('~/assets/img/swp_white.png')" alt="CDA Logo">
+              <span>
+                <img class="logo-img-2" v-bind:src="logoSWPSrc" alt="SWP Logo">
+              </span>
           </b-navbar-brand>
         </div>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -36,8 +41,24 @@
             </nuxt-link>
           </b-navbar-nav>
         </b-navbar-nav>
+        <!-- theme button -->
+        <div class="theme-button">
+              <input
+                @change="toggleTheme"
+                id="checkbox"
+                type="checkbox"
+                class="switch-checkbox"
+              />
+              <label for="checkbox" class="switch-label">
+                <span>🌙</span>
+                <span>☀️</span>
+                <div
+                  class="switch-toggle"
+                  :class="{ 'switch-toggle-checked': userTheme === 'dark-theme' }"
+                ></div>
+              </label>
+            </div>
         <div class="button-container">
-            <ThemeButton style="margin-top: 20px; margin-right: 50px;"/>
             <b-button class="masuk-button">Masuk</b-button>
             <b-button class="daftar-button">Daftar</b-button>
         </div>
@@ -48,41 +69,116 @@
 </template>
 
 <script>
-import ThemeButton from '~/components/theme_button.vue';
-
 export default {
-  components: { ThemeButton },
-  props: {
-      showLogoCda: {
-        type: Boolean,
-        default: true,
-      },
-      showSwp: {
-        type: Boolean,
-        default: true,
+  data() {
+      return {
+        userTheme: "light-theme",
+        darkMode: false,
       }
   },
+  methods: {
+    toggleTheme() {
+      const activeTheme = localStorage.getItem("user-theme");
+      if (activeTheme === "light-theme") {
+        this.setTheme("dark-theme");
+      } else {
+        this.setTheme("light-theme");
+      }
+    },
+    getTheme() {
+      return localStorage.getItem("user-theme");
+    },
+    setTheme(theme) {
+      localStorage.setItem("user-theme", theme);
+      this.userTheme = theme;
+      document.documentElement.className = theme;
+    },
+
+    getMediaPreference() {
+      const hasDarkPreference = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      if (hasDarkPreference) {
+        return "dark-theme";
+      } else {
+        return "light-theme";
+      }
+    },
+  },
+  computed: {
+    logoCDASrc() {
+      return this.userTheme === 'dark-theme'
+        ? require(`~/assets/img/cda_white.png`)
+        : require(`~/assets/img/cda.png`)
+    },
+    logoSWPSrc() {
+      return this.userTheme === 'dark-theme'
+        ? require(`~/assets/img/swp_white.png`)
+        : require(`~/assets/img/swp.png`)
+    }
+  }
 };
 </script>
 
 <style>
+/* theme button */
+.switch-checkbox {
+  display: none;
+}
+
+.switch-label {
+  align-items: center;
+  background: var(--bg-cda);
+  border: calc(var(--element-size) * 0.025) solid var(--accent-color);
+  border-radius: var(--element-size);
+  cursor: pointer;
+  display: flex;
+  font-size: calc(var(--element-size) * 0.3);
+  height: calc(var(--element-size) * 0.35);
+  position: relative;
+  padding: calc(var(--element-size) * 0.1);
+  transition: background 0.5s ease;
+  justify-content: space-between;
+  width: var(--element-size);
+  z-index: 1;
+}
+
+.switch-toggle {
+  position: absolute;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  top: -6px;
+  left: -1px;
+  height: calc(var(--element-size) * 0.5);
+  width: calc(var(--element-size) * 0.5);
+  transform: translateX(0);
+  transition: transform 0.3s ease, background-color 0.5s ease;
+}
+
+.switch-toggle-checked {
+  transform: translateX(calc(var(--element-size) * 0.6)) !important;
+}
+
+/* navigation */
 .logo-img {
   width: 140px;
   height: 100%;
 }
 
 .logo-container {
-    height: 80px;
-    width: 150px;
-    object-fit: contain;
+  height: 80px;
+  width: 150px;
+  object-fit: contain;
 }
 
 .navbar {
   background-color: var(--additional-color);
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
-  height: 80px;
+  height: 100px;
 }
 
 .navbar-light .navbar-toggler {
@@ -161,12 +257,25 @@ a:hover {
     align-items: top;
   }
 
+  .navbar .container {
+    justify-content: space-between;
+    margin-left: 20px;
+  }
+
   .nav-collapse {
-    background-color: var(--bg-cda);
+    background-color: var(--additional-color);
     margin-top: -20px;
     z-index: 2;
     padding: 20px;
-    margin-right: 10px;
+    margin-right: 30px;
+  }
+
+  .navbar-light .navbar-nav .nav-link {
+    line-height: 10px;
+  }
+
+  .theme-button {
+    margin: 20px 0;
   }
 }
 
@@ -185,8 +294,13 @@ a:hover {
     align-items: top;
   }
 
+  .navbar .container {
+    justify-content: space-between;
+    margin-left: 20px;
+  }
+
   .nav-collapse {
-    background-color: var(--bg-cda);
+    background-color: var(--additional-color);
     z-index: 2;
     padding: 20px;
     margin-right: 10px;
@@ -217,6 +331,11 @@ a:hover {
 
 /* large */
 @media (min-width: 992px) {
+  .theme-button {
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+
   .logo-img-2 {
     height: 30px;
     width: 120px;
@@ -244,7 +363,7 @@ a:hover {
     display: flex;
     flex-direction: row;
     padding-left: 20px;
-    /* margin-top: 15px; */
+    margin-top: 10px;
   }
 
   .daftar-button {
@@ -254,7 +373,6 @@ a:hover {
   .nav-collapse {
     font-size: 15px;
     margin-right: 20px;
-    margin-top: -17px;
     margin-left: 150px;
     justify-content: space-between;
   }

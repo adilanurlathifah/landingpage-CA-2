@@ -22,7 +22,6 @@ body {
 }
 
 :root.dark-theme {
-  /* sama navbar */
   --bg-cda: #161D2A; 
   --bg-container: #121926;
   --bg-container-2: #0f31a1;

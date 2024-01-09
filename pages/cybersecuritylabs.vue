@@ -2,8 +2,7 @@
   <div>
     <Nuxt/>
     <div>
-      <Navigation/>
-      <!-- <Navigation :showLogoCda="true" :showSwp="true" /> -->
+      <Navigation />
     </div>
       <Header
         :title="pageTitle"
@@ -207,7 +206,6 @@ import { LABS } from '~/utils/list-lab.json'
 import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
 import Footer from '~/components/landingpage/footer.vue';
-import ThemeButton from '~/components/theme_button.vue'
 
 export default {
     auth: false,
@@ -256,11 +254,16 @@ export default {
             }
         };
     },
-    components: { Navigation, Header, Footer, CyberlabContent, VueSlickCarousel,ThemeButton }
+    components: { Navigation, Header, Footer, CyberlabContent, VueSlickCarousel }
 };
 </script>
   
 <style>
+  .logo-container {
+    max-height: 150px;
+    object-fit: contain;
+  }
+
   .listlab-card-body p {
     color: var(--text-color-3);
   }
@@ -300,6 +303,12 @@ export default {
     padding: 50px;
     margin-top: 0px;
   }
+
+  /* .client-box-container {
+    background-color: var(--text-color-3);
+    width: 700px;
+    height: 150px;
+  } */
 
   .client-container h3 {
     color: var(--text-color);
