@@ -186,7 +186,7 @@
       <div class="client-container">
           <div class="text-center w-100 mb-3">
             <h3 style="padding-top: 10px; padding-bottom: 20px; font-weight: 700;">Telah Dipercaya Oleh</h3>
-            <div class="row col-12 mx-auto py-4 justify-content-center">
+            <div class="client-box-container row col-12 mx-auto py-4 justify-content-center">
               <img src="~assets/img/logo/FHUI.png" class="mx-2 logo-container"/>
               <img src="~assets/img/cyberlab/telkom.jpg" class="mx-2 logo-container"/>
               <img src="~assets/img/cyberlab/VU_White.png" class="mx-2 logo-container"/>
@@ -299,16 +299,16 @@ export default {
 
   .client-container {
     background-color: var(--bg-cda);
-    height: 300px;
+    height: 350px;
     padding: 50px;
     margin-top: 0px;
   }
 
-  /* .client-box-container {
+  .client-box-container {
     background-color: var(--text-color-3);
     width: 700px;
     height: 150px;
-  } */
+  }
 
   .client-container h3 {
     color: var(--text-color);
@@ -404,12 +404,21 @@ export default {
   .daftar-button {
     margin: 10px 0px 10px;  
   }
+
+  .client-box-container {
+    height: 200px;
+  }
 }
 
 /* large */
 @media (max-width: 992px) {
   .cybersecurity-labs-navbar .nav-collapse {
     background-color: var(--bg-cda);
+  }
+  .client-box-container {
+    background-color: var(--text-color-3);
+    width: 700px;
+    height: 200px;
   }
 }
 </style>

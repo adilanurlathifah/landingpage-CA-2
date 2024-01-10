@@ -31,17 +31,19 @@
             <b-dropdown-item class="border-bottom" href="#">Corporate Training</b-dropdown-item>
             <b-dropdown-item href="#">Cybersecurity Culture</b-dropdown-item>
           </b-nav-item-dropdown>
-
           <b-navbar-nav>
-            <nuxt-link to="/cybersecuritylabs">
-              <b-nav-item>Cybersecurity Lab</b-nav-item>
-            </nuxt-link>
-            <nuxt-link to="/jobs">
-              <b-nav-item>Jobs</b-nav-item>
-            </nuxt-link>
+              <b-nav-item>
+                <nuxt-link to="/cybersecuritylabs">
+                  Cybersecurity Lab
+                </nuxt-link>
+              </b-nav-item>
+              <b-nav-item>
+                <nuxt-link to="/jobs">
+                  Jobs
+                </nuxt-link>
+              </b-nav-item>
           </b-navbar-nav>
         </b-navbar-nav>
-        <!-- theme button -->
         <div class="theme-button">
               <input
                 @change="toggleTheme"
@@ -70,10 +72,14 @@
 
 <script>
 export default {
+  mounted() {
+    const initUserTheme = this.getTheme() || this.getMediaPreference();
+    this.setTheme(initUserTheme);
+  },
   data() {
       return {
         userTheme: "light-theme",
-        darkMode: false,
+        // darkMode: false,
       }
   },
   methods: {
@@ -85,15 +91,14 @@ export default {
         this.setTheme("light-theme");
       }
     },
-    getTheme() {
-      return localStorage.getItem("user-theme");
-    },
     setTheme(theme) {
       localStorage.setItem("user-theme", theme);
       this.userTheme = theme;
       document.documentElement.className = theme;
     },
-
+    getTheme() {
+      return localStorage.getItem("user-theme");
+    },
     getMediaPreference() {
       const hasDarkPreference = window.matchMedia(
         "(prefers-color-scheme: dark)"
@@ -190,13 +195,13 @@ a:hover {
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: var(--text-color-4);
+  color: var(--accent-color);
   font-weight: 600;
-  margin-top: 14px;
 }
 
-.navbar-light .navbar-nav .nav-link:hover {
-  color: var(--accent-color-2);
+.navbar-light .navbar-nav .nav-link a {
+  color: var(--accent-color);
+  font-weight: 600;
 }
 
 .masuk-button {
@@ -247,8 +252,7 @@ a:hover {
   .logo-img-2 {
     height: 30px;
     width: 120px;
-    margin-right: 20px;
-    margin-top: 10px;
+    margin: 10px 20px 0px 0px;
   }
 
   .logo-container {
@@ -264,10 +268,9 @@ a:hover {
 
   .nav-collapse {
     background-color: var(--additional-color);
-    margin-top: -20px;
     z-index: 2;
     padding: 20px;
-    margin-right: 30px;
+    margin: 10px 30px 0px 0px;;
   }
 
   .navbar-light .navbar-nav .nav-link {
@@ -285,8 +288,7 @@ a:hover {
   .logo-img-2 {
     height: 30px;
     width: 120px;
-    margin-right: 20px;
-    margin-top: 10px;
+    margin: 10px 20px 0px 0px;
   }
 
   .logo-container {
@@ -333,8 +335,7 @@ a:hover {
 /* large */
 @media (min-width: 992px) {
   .theme-button {
-    margin-top: 30px;
-    margin-left: 30px;
+    margin: 30px 0px 0px 30px;
   }
 
   .logo-img-2 {
@@ -348,8 +349,7 @@ a:hover {
     flex-direction: row;
     justify-content: left;
     align-items: top;
-    margin-top: 10px;
-    margin-left: 90px;
+    margin: 10px 0px 0px 90px;
   }
 
   /* .navbar .container {
@@ -373,16 +373,14 @@ a:hover {
 
   .nav-collapse {
     font-size: 15px;
-    margin-right: 20px;
-    margin-left: 150px;
+    margin: -20px 20px 0px 150px;
     justify-content: space-between;
   }
 
   .dropdown-item {
     padding: 10px;
     font-size: small;
-    margin-left: 5px;
-    margin-right: 10px;
+    margin: 0px 10px 0px 5px;
   }
 }
 </style>
