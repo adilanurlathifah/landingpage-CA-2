@@ -271,6 +271,7 @@ a:hover {
   }
 
   .navbar-light .navbar-nav .nav-link {
+    margin-top: 10px;
     line-height: 10px;
   }
 
