@@ -2,7 +2,7 @@
   <div>
     <Nuxt/>
       <DarkNav/>
-      <Header
+      <DarkHeader
         :title="pageTitle"
         :subtitle="pageSubtitle"
         :pageImage="pageImage"
@@ -143,7 +143,7 @@
     <div class="cyberlab-slider">
       <div class="col-lg-12 col-md-12 col-sm-12 mx-auto mb-5 mt-2 p-0 pt-4">
           <div class="text-center mx-auto w-100 mb-3">
-            <h2>Akses dan Telusuri Semuanya Sekarang juga!</h2>
+            <h2 style="color: white; font-weight: 600; margin-top: 25px;">Akses dan Telusuri Semuanya Sekarang juga!</h2>
           </div>
         <VueSlickCarousel ref="carousel" v-bind="settings">
           <div v-for="data in labs" :key="data.title">
@@ -182,7 +182,7 @@
       </div>
       <div class="client-container">
           <div class="text-center w-100 mb-3">
-            <h2>Telah Dipercaya Oleh</h2>
+            <h2 style="color: white; font-weight: 600;">Telah Dipercaya Oleh</h2>
             <div class="row col-12 mx-auto justify-content-center">
               <img src="~assets/img/cyberlab/FHUI_white.png" class="mx-2 logo-container"/>
               <img src="~assets/img/cyberlab/telkom_white.png" class="mx-2 logo-container"/>
@@ -197,13 +197,13 @@
 </template>
   
 <script>
-import Header from '~/components/landingpage/header.vue';
+import DarkNav from '~/components/landingpage/dark_nav.vue'
+import DarkFooter from '~/components/landingpage/dark_footer.vue'
+import DarkHeader from '~/components/landingpage/dark_header.vue';
 import CyberlabContent from '~/components/cyberlab_container.vue';
 import { LABS } from '~/utils/list-lab.json'
 import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
-import DarkNav from '~/components/landingpage/dark_nav.vue'
-import DarkFooter from '~/components/landingpage/dark_footer.vue'
 
 export default {
     auth: false,
@@ -252,7 +252,7 @@ export default {
             }
         };
     },
-    components: { DarkNav, Header, DarkFooter, CyberlabContent, VueSlickCarousel }
+    components: { DarkNav, DarkHeader, DarkFooter, CyberlabContent, VueSlickCarousel }
 };
 </script>
   
@@ -280,9 +280,14 @@ export default {
     margin-top: -10px;
   }
 
+  .container {
+    margin-top: -50px;
+  }
+
   .cyberlab-container {
-    background-color: #161D2A;
+    background-color: #121926;
     width: 100%;
+    color: white;
   }
 
   .cyberlab-container h2 {
@@ -291,6 +296,12 @@ export default {
     padding-bottom: 20px; 
     font-weight: 700;
     font-size: 30px;
+  }
+
+  .cyberlab-container h4 {
+    font-weight: 700;
+    font-size: 20px;
+    padding-top: 10px;
   }
 
   .card-listlab {
@@ -317,6 +328,16 @@ export default {
   .cybersecurity-labs-body {
     background-color: #161D2A;
     color: white;
+  }
+
+  .card-container {
+    background-color: #1E2739;
+    padding: 10px;
+  }
+
+  .cyberlab-slider {
+    background-color: #161D2A;
+    margin-top: -10px;
   }
 
   .header img {

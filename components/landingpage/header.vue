@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div class="light-header">
     <div
         class="row col-lg-10 col-md-10 col-sm-12 mx-auto pt-5 flex-lg-row flex-column-reverse">
         <b-col md="6" sm="12" class="pl-2 pr-0 align-self-center">
@@ -35,14 +35,15 @@ export default {
 
 
 <style>
-.header {
-  background-color: var(--bg-cda);
+.light-header {
+  background-color: white;
+  color: black;
+  margin-top: 100px;
 }
 
 .custom-button {
-  background-color: var(--btn-color);
-  color: var(--text-color-2);
-  border: 0.75px solid var(--btn-color);
+  background-color: #183ebc;
+  color: white;
   border-radius: 5px;
   padding: 10px 30px;
   cursor: pointer;
@@ -51,8 +52,7 @@ export default {
 }
 
 .custom-button:hover {
-  background: var(--accent-color2);
-  color: var(--additional-color);
+  background: #3260f7;
   transition-duration: 0.5s;
 }
 

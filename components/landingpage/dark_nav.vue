@@ -55,6 +55,7 @@ export default {}
 <style>
 .dark-navbar {
   background-color: #121926;
+
 }
 
 .logo-img {
@@ -75,6 +76,10 @@ export default {}
     justify-content: left;
     margin-left: 100px;
 }
+
+.navbar-collapse {
+    padding: 10px;
+  }
 
 .dark-navbar .dark-navbar-nav .nav-link {
     color: white;
@@ -151,12 +156,17 @@ export default {}
     margin-left: 10px;
   }
 
+  .navbar-collapse {
+    margin-top: -10px;
+  }
+
   .navbar-dark .navbar-toggler {
     margin-top: -10px;
     margin-right: 10px;
   }
 
   .button-container {
+    margin-top: 20px;
     gap: 10px;
   }
 }

@@ -2,7 +2,7 @@
     <div class="dark-footer-top">
       <div class="row">
         <div v-if="showFooterTop" class="col-12 d-flex flex-column justify-content-center" style="margin-bottom: 50px; margin-top:50px;">
-          <h2 class="text-center" data-aos="fade-up">Mulai Membangun Keahlian Cyber Security Kamu Hari ini!</h2>
+          <h2 style="color: white; font-weight: 600;" class="text-center" data-aos="fade-up">Mulai Membangun Keahlian Cyber Security Kamu Hari ini!</h2>
           <button v-if="showButton" class="align-self-center custom-button" style="text-align: center;">Buat Akun Sekarang</button>
         </div>
       </div>
