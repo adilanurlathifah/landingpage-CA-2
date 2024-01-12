@@ -1,6 +1,6 @@
 <template>
     <div>
-    <b-navbar class="dark-navbar fixed-top" style="background-color: #121926;" toggleable="lg" type="dark">
+    <b-navbar class="dark-navbar fixed-top" toggleable="lg" type="dark">
         <div class="logo-container">
             <b-navbar-brand class="logo-img">
                 <nuxt-link to="/">
