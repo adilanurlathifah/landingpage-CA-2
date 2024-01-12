@@ -1,3 +1,11 @@
 <template>
-    <h1>ini halaman jobs</h1>
+    <div>
+        <h1>Jobs Page</h1>
+    </div>
 </template>
+
+<script>
+export default {
+    auth: false
+}
+</script>

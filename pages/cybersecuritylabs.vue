@@ -1,9 +1,7 @@
 <template>
   <div class="cybersecurity-labs-body">
     <Nuxt/>
-    <div class="cybersecurity-labs-navbar">
-      <Navigation :showLogoCda="false" :showSwp="false" />
-    </div>
+      <DarkNav/>
       <Header
         :title="pageTitle"
         :subtitle="pageSubtitle"
@@ -12,7 +10,7 @@
       <CyberlabContent/>
       <div class="cyberlab-container col-lg-12 col-md-12 col-sm-12 mx-auto mb-5 mt-2 p-0 pt-4">
           <div class="text-center mx-auto w-100 mb-3">
-            <h3 style="text-align: center; padding-top: 10px; padding-bottom: 20px; font-weight: 700;">Akses dan Telusuri Semuanya Sekarang juga!</h3>
+            <h2>Akses dan Telusuri Semuanya Sekarang juga!</h2>
           </div>
         <VueSlickCarousel ref="carousel" v-bind="settings">
           <div v-for="data in labs" :key="data.title">
@@ -49,29 +47,29 @@
           </div>
         </VueSlickCarousel>
       </div>
-      <div class="container">
+      <div class="client-container">
           <div class="text-center w-100 mb-3">
-            <h3 style="padding-top: 10px; padding-bottom: 20px; font-weight: 700;">Telah Dipercaya Oleh</h3>
-            <div class="row col-12 mx-auto py-4 justify-content-center">
-              <img src="~assets/img/logo/FHUI.png" class="mx-2 logo-container"/>
-              <img src="~assets/img/cyberlab/telkom.jpg" class="mx-2 logo-container"/>
+            <h2>Telah Dipercaya Oleh</h2>
+            <div class="row col-12 mx-auto justify-content-center">
+              <img src="~assets/img/cyberlab/FHUI_white.png" class="mx-2 logo-container"/>
+              <img src="~assets/img/cyberlab/telkom_white.png" class="mx-2 logo-container"/>
               <img src="~assets/img/cyberlab/VU_White.png" class="mx-2 logo-container"/>
-              <img src="~assets/img/cyberlab/astra.jpeg" class="mx-2 logo-container"/>
+              <img src="~assets/img/cyberlab/astra_white.png" class="mx-4 logo-container"/>
             </div>
         </div>
       </div>
-      <Footer />
+      <DarkFooter />
   </div>
 </template>
   
 <script>
 import Header from '~/components/landingpage/header.vue';
-import Navigation from '~/components/landingpage/navigation.vue';
 import CyberlabContent from '~/components/cyberlab_container.vue';
 import { LABS } from '~/utils/list-lab.json'
 import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
-import Footer from '~/components/landingpage/footer.vue';
+import DarkNav from '~/components/landingpage/dark_nav.vue'
+import DarkFooter from '~/components/landingpage/dark_footer.vue'
 
 export default {
     auth: false,
@@ -95,8 +93,8 @@ export default {
                   {
                     "breakpoint": 1024,
                     "settings": {
-                      "slidesToShow": 3.5,
-                      "slidesToScroll": 3.5,
+                      "slidesToShow": 3,
+                      "slidesToScroll": 3,
                       "infinite": true,
                       "dots": true
                     }
@@ -120,14 +118,14 @@ export default {
             }
         };
     },
-    components: { Navigation, Header, Footer, CyberlabContent, VueSlickCarousel }
+    components: { DarkNav, Header, DarkFooter, CyberlabContent, VueSlickCarousel }
 };
   </script>
   
 <style>
   .logo-container {
-    height: 80px;
-    width: 150px;
+    height: 100px;
+    width: 170px;
     object-fit: contain;
   }
 
@@ -153,6 +151,14 @@ export default {
     width: 100%;
   }
 
+  .cyberlab-container h2 {
+    text-align: center; 
+    padding-top: 10px; 
+    padding-bottom: 20px; 
+    font-weight: 700;
+    font-size: 30px;
+  }
+
   .card-listlab {
     min-width: 200px;
     background-color: #1E2739;
@@ -163,17 +169,20 @@ export default {
     color: white;
   }
 
+  .client-container {
+    margin-bottom: 60px;
+  }
+
+  .client-container h2 {
+    padding-top: 50px; 
+    padding-bottom: 10px; 
+    font-weight: 700;
+    font-size: 30px;
+  }
+
   .cybersecurity-labs-body {
     background-color: #161D2A;
     color: white;
-  }
-
-  .cybersecurity-labs-navbar .navbar {
-    background-color: #161D2A;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 80px;
   }
 
   .header img {
@@ -202,21 +211,6 @@ export default {
 
 /* small */
 @media (max-width: 576px) { 
-  .nav-collapse {
-    margin-top: 21px;
-    z-index: 2;
-    padding: 20px;
-  }
-
-  .dropdown-item {
-    padding: 10px;
-  }
-
-  .navbar-nav .nav-link {
-    font-size: 15px;
-    line-height: 25px;
-  }
-
   .button-container {
     display: flex;
     flex-direction: column;
@@ -228,46 +222,15 @@ export default {
   .daftar-button {
     margin: 10px 0px 10px;  
   }
-  .navbar-toggler {
-    margin-right: 35px;
-  }
 }
 
-/* medium */
 @media (max-width: 768px) {  
-  .nav-collapse {
-    margin-top: 20px;
-    z-index: 2;
-    padding: 20px;
-  }
 
-  .dropdown-item {
-    padding: 10px;
-    font-size: small;
-  }
-
-  .navbar-nav .nav-link {
-    font-size: 15px;
-    line-height: 25px;
-  }
-
-  .button-container {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .masuk-button {
-    margin: 10px 0px 10px; 
-  }
-  .daftar-button {
-    margin: 10px 0px 10px;  
-  }
 }
 
-/* large */
 @media (max-width: 992px) {
-  .cybersecurity-labs-navbar .nav-collapse {
+  /* .cybersecurity-labs-navbar .nav-collapse {
     background-color: #161D2A;
-  }
+  } */
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
-    <div class="cyberlab-container">
-        <h2 style="text-align: center; padding-top: 50px">Mulai Berlatih dan Ikuti Tantangan Lab yang Menyenangkan</h2>
+    <div class="cyberlab-ft-container">
+        <h2 style="text-align: center; padding-top: 50px;">Mulai Berlatih dan Ikuti Tantangan Lab yang Menyenangkan</h2>
         <div class="container p-md-5 p-2">
             <div class="row g-2 g-md-4 mx-auto py-4 justify-content-center">
                 <div class="col-12 col-md-6">
@@ -138,36 +138,43 @@
 </script>
 
 <style>
+/* .container {
+    margin-top: -50px;
+} */
 
 .card-container {
     background-color: #1E2739;
 }
 
-.cyberlab-container {
+.cyberlab-ft-container {
     width: 100%;
     margin-top: 50px;
     background-color: #121926;
 }
 
-.cyberlab-container h2 {
-    font-size: 24px;
+.cyberlab-ft-container h2 {
+    font-size: 30px;
     font-weight: bolder;
 }
-.cyberlab-container h4 {
+.cyberlab-ft-container h4 {
     margin-top: 15px;
     color: white;
     font-weight: 700;
     font-size: 20px;
 }
 
-.cyberlab-container p {
+.cyberlab-ft-container p {
     color: white;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 @include media-breakpoint-only(md, xl) { 
-    .cyberlab-container {
+    .cyberlab-ft-container {
         height: 500px;
+    }
+
+    .container {
+        margin-top: 50px;
     }
 }
 </style>

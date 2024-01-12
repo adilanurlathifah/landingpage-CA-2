@@ -1,7 +1,7 @@
 <template>
   <div class="index-body">
     <div class="index-navbar">
-      <Navigation :showLogoCda="true" :showSwp="true" />
+      <Navigation />
     </div>
       <Header
         :title="pageTitle"
