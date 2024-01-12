@@ -193,11 +193,16 @@ export default {
 }
 .footer {
   display: flex;
+  background-color: var(--bg-cda);
   flex-direction: column;
   color: #0D2779;
   /* margin-top: -30px; */
   padding: 5px;
   z-index: 0;
+}
+
+.footer p {
+  color: var(--text-color);
 }
 
 .footer-content {

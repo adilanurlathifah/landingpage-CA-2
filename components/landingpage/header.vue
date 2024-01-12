@@ -35,10 +35,14 @@ export default {
 
 
 <style>
+.header {
+  background-color: var(--bg-cda);
+}
+
 .custom-button {
-  background-color: #2839bc;
-  color: white;
-  border: 0.75px solid #2839bc;
+  background-color: var(--btn-color);
+  color: var(--text-color-2);
+  border: 0.75px solid var(--btn-color);
   border-radius: 5px;
   padding: 10px 30px;
   cursor: pointer;
@@ -47,8 +51,8 @@ export default {
 }
 
 .custom-button:hover {
-  background: #2070f2;
-  color: white;
+  background: var(--accent-color2);
+  color: var(--additional-color);
   transition-duration: 0.5s;
 }
 
