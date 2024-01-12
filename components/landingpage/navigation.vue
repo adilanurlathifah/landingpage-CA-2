@@ -1,7 +1,6 @@
 <template>
   <div>
     <b-navbar class="light-navbar fixed-top" toggleable="lg" type="light">
-      <div class="navbar-collapsed">
         <div class="logo-container">
         <b-navbar-brand class="logo-img">
           <nuxt-link to="/">
@@ -9,13 +8,10 @@
           </nuxt-link>
           </b-navbar-brand>
           <b-navbar-brand class="logo-img-2">
-              <nuxt-link to="/">
                 <img src="~/assets/img/swp.png" />
-              </nuxt-link>
           </b-navbar-brand>
           </div>
           <b-navbar-toggle target="navbar-collapse"></b-navbar-toggle>
-        </div>
       <b-collapse id="navbar-collapse" is-nav>
         <b-navbar-nav class="light-navbar-nav">
           <b-nav-item-dropdown text="Academy" left>
@@ -59,15 +55,22 @@ export default {}
     background-color: #FFFFFF;
   }
   
+  .navbar-collapse {
+    background-color: white;
+    padding: 10px;
+  }
+
   .logo-img {
     height: 75px;
     width: 180px;
+    z-index: 10;
     margin-left: 10px;
   }
   
   .logo-img-2 {
     height: 40px;
     width: 120px;
+    z-index: 10;
     margin: 15px 20px 0px 0px;
   }
   
@@ -167,7 +170,12 @@ export default {}
       margin-top: 10px;
       margin-left: 10px;
     }
-  
+
+    .light-navbar .navbar-collapse {
+      margin-top: -10px;
+      background-color: white;
+    }
+
     .navbar-dark .navbar-toggler {
       margin-top: -10px;
       margin-right: 10px;
@@ -204,6 +212,7 @@ export default {}
   
     .button-container {
       margin-right: 150px;
+      margin-bottom: 20px;
     }
   }
 </style>

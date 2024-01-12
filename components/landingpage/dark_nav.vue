@@ -8,9 +8,7 @@
               </nuxt-link>
           </b-navbar-brand>
           <b-navbar-brand class="logo-img-2">
-              <nuxt-link to="/">
               <img src="~/assets/img/swp_white.png" />
-              </nuxt-link>
           </b-navbar-brand>
           </div>
           <b-navbar-toggle target="navbar-collapse"></b-navbar-toggle>
@@ -156,8 +154,9 @@ background-color: #154FE3;
   margin-left: 10px;
 }
 
-.navbar-collapse {
+.dark-navbar .navbar-collapse {
   margin-top: -10px;
+  background-color: #121926;
 }
 
 .navbar-dark .navbar-toggler {
@@ -179,21 +178,22 @@ background-color: #154FE3;
 }
 
 @media (min-width: 992px) {
-.dark-navbar {
-  width: 100%;
-  height: 100px;
-}
+  .dark-navbar {
+    width: 100%;
+    height: 100px;
+  }
 
-.dark-navbar-nav {
-  margin-left: 200px;
-}
+  .dark-navbar-nav {
+    margin-left: 200px;
+  }
 
-.logo-container {
-  margin-top: 30px;
-}
+  .logo-container {
+    margin-top: 30px;
+  }
 
   .button-container {
     margin-right: 150px;
+    margin-bottom: 20px;
   }
 }
 </style>
