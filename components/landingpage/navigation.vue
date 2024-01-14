@@ -37,9 +37,17 @@
             </b-nav-item>
         </b-navbar-nav>
         <b-navbar-nav class="button-container ml-auto">
-            <b-button class="masuk-btn mt-sm-1 mr-sm-2">Masuk</b-button>
-            <b-button class="daftar-btn mt-sm-1 mr-sm-2">Daftar</b-button>
-          </b-navbar-nav>
+          <nuxt-link to="/login">
+            <b-button class="masuk-btn mt-sm-1 mr-sm-2">
+                Masuk
+            </b-button>
+          </nuxt-link>
+          <nuxt-link to="/register">
+            <b-button class="daftar-btn mt-sm-1 mr-sm-2">
+                Daftar
+            </b-button>
+          </nuxt-link>
+        </b-navbar-nav>
       </b-collapse>
     </b-navbar>
   </div>
