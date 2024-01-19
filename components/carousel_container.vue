@@ -44,22 +44,22 @@ methods: {
 
 <style>
 .carousel-container {
-display: flex;
-justify-content: center;
-align-items: center;
-width: 100%;
-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 500px;
 }
 
 .carousel-banner {
-margin-top: -230px;
-width: 960px;
+  margin-top: -230px;
+  width: 960px;
 }
 
 img {
-display: block;
-margin: 0;
-max-height: 100%;
+  /* display: block;
+  margin: 0; */
+  max-height: 100%;
 /* border-radius: 10px; */
 }
 </style>

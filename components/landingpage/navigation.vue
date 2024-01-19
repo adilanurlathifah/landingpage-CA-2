@@ -1,226 +1,215 @@
 <template>
   <div>
-    <b-navbar class="light-navbar fixed-top" toggleable="lg" type="light">
-        <div class="logo-container">
-        <b-navbar-brand class="logo-img">
-          <nuxt-link to="/">
-            <img src="~/assets/img/cda.png" />
-          </nuxt-link>
-          </b-navbar-brand>
-          <b-navbar-brand class="logo-img-2">
-                <img src="~/assets/img/swp.png" />
-          </b-navbar-brand>
+    <b-navbar  class="light-nav fixed-top" toggleable="lg" type="light" variant="light">
+      <div class="logo-container" style="float: left;">
+        <nuxt-link to="/">
+          <div id="logo">
+            <img src="~/assets/img/cda.png" width="145px"/>
           </div>
-          <b-navbar-toggle target="navbar-collapse"></b-navbar-toggle>
-      <b-collapse id="navbar-collapse" is-nav>
-        <b-navbar-nav class="light-navbar-nav">
+        </nuxt-link>
+        <div id="logo">
+          <img src="~/assets/img/swp.png" width="115px"/>
+        </div>
+      </div>
+      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+      <b-collapse id="nav-collapse" is-nav>
+        <b-navbar-nav class="mr-auto">
           <b-nav-item-dropdown text="Academy" left>
             <b-dropdown-item class="border-bottom dropdown-item" href="#">Belajar Online</b-dropdown-item>
             <b-dropdown-item class="dropdown-item border-bottom" href="#">
-            <div class="live-class-container">
-                Live Class
-                <img src="~/assets/img/signal-live-class.svg" class="signal-live-class" alt="Signal Live Class">
-            </div>
+              <div class="live-class-container">
+                  Live Class
+                  <img src="~/assets/img/signal-live-class.svg" class="signal-live-class" alt="Signal Live Class">
+              </div>
             </b-dropdown-item>
-            <b-dropdown-item class="border-bottom dropdown-item" href="#">Corporate Training</b-dropdown-item>
+            <b-dropdown-item class="dropdown-item border-bottom" href="#">Corporate Training</b-dropdown-item>
             <b-dropdown-item class="dropdown-item" href="#">Cybersecurity Culture</b-dropdown-item>
-        </b-nav-item-dropdown>
-            <b-nav-item>
-              <nuxt-link to="/cybersecuritylabs">
-                Cybersecurity Labs
-              </nuxt-link>
-            </b-nav-item>
-            <b-nav-item>
-              <nuxt-link to="/jobs">
-                Jobs
-              </nuxt-link>
-            </b-nav-item>
-        </b-navbar-nav>
-        <b-navbar-nav class="button-container ml-auto">
-          <nuxt-link to="/login">
-            <b-button class="masuk-btn mt-sm-1 mr-sm-2">
-                Masuk
-            </b-button>
-          </nuxt-link>
-          <nuxt-link to="/register">
-            <b-button class="daftar-btn mt-sm-1 mr-sm-2">
-                Daftar
-            </b-button>
-          </nuxt-link>
+          </b-nav-item-dropdown>
+          <div class="nav-list">
+            <ul style="list-style-type: none;">
+              <li>
+                <nuxt-link to="/cybersecuritylabs">
+                  Cybersecurity Labs
+                </nuxt-link>
+              </li>
+              <li>
+                <nuxt-link to="/jobs">
+                  Jobs
+                </nuxt-link>
+              </li>
+            </ul>
+          </div>
+          <b-navbar-nav class="button-container">
+            <nuxt-link to="/login">
+              <b-button class="masuk-btn mt-sm-1 mr-sm-2">
+                  Masuk
+              </b-button>
+            </nuxt-link>
+            <nuxt-link to="/register">
+              <b-button class="daftar-btn mt-sm-1 mr-sm-2">
+                  Daftar
+              </b-button>
+            </nuxt-link>
+          </b-navbar-nav>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
   </div>
 </template>
-  
-<script>
-export default {}
-</script>
-  
-  
+
 <style>
-  .light-navbar {
-    background-color: #FFFFFF;
-  }
-  
-  .navbar-collapse {
-    background-color: white;
-    padding: 10px;
-  }
+.logo-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
 
-  .logo-img {
-    height: 75px;
-    width: 180px;
-    z-index: 10;
-    margin-left: 10px;
-  }
-  
-  .logo-img-2 {
-    height: 40px;
-    width: 120px;
-    z-index: 10;
-    margin: 15px 20px 0px 0px;
-  }
-  
+.signal-live-class {
+  width: 13px; 
+  height: 13px; 
+  margin-left: 3px;
+  object-fit: contain;
+}
+
+#nav-collapse {
+   text-decoration: none;
+   font-size: 1rem;
+   font-weight: 500;
+   color: black;
+}
+
+.light-nav, .bg-light {
+  background-color: white !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: black;
+  font-weight: 600;
+}
+
+.dropdown-item {
+  padding: 5px 10px;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #1239B5;
+  font-weight: 600;
+}
+
+.nav-list li a:hover {
+  color: #1239B5;
+}
+
+.masuk-btn {
+  width: 100%;
+  color: #0176E0;
+  background-color: transparent;
+  outline: 0.5px solid #0176E0;
+  border: none;
+  padding: 8px 22px;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.daftar-btn {
+  width: 100%;
+  color: white;
+  background-color: #183ebc;
+  padding: 8px 22px;
+  font-size: 16px;
+  border: none;
+  text-decoration: none;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.masuk-btn:hover {
+  background: #2c54d7;
+  color: white;
+}
+
+.daftar-btn:hover {
+  background: #3f67eb;
+  color: white;
+}
+
+.button-container {
+  gap: 20px;
+}
+
+@media screen and (max-width: 600px) {
   .logo-container {
+    margin: 10px 0px 0px 0px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #nav-collapse {
+    padding-top: 20px;
+  }
+
+  .navbar-light .navbar-nav .nav-link {
+    margin-bottom: 15px;
+  }
+  .nav-list li {
+    margin-bottom: 20px;
+  }
+  .button-container {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .light-nav {
+    padding-left: 50px;
+    height: 80px;
+  }
+
+  #nav-collapse {
+    margin: 10px 0px 0px 100px;
+  }
+
+  .nav-list ul {
     display: flex;
     flex-direction: row;
-    justify-content: left;
+    gap: 25px;
+    margin-top: 8px;
+    margin-right: 30px;
   }
-  
-  .signal-live-class {
-    width: 13px; 
-    height: 13px; 
-    margin-left: 3px;
-    margin-top: 5px;
-    object-fit: contain;
-  }
-  
-  .live-class-container {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .light-navbar-nav {
-    padding: 10px;
-  }
-  
-  .navbar-light .light-navbar-nav .nav-link {
-    color: black;
-    font-weight: 600;
-  }
-  
-  .navbar-light .light-navbar-nav .nav-link:hover {
-    color: #183ebc;
-  }
-  
-  .nav-item a {
-    font-size: 16px;
-    font-weight: 600;
-    text-decoration: none;
-  }
-  
-  .dropdown-item a {
-      color: black;
-      font-size: 15px;
-  }
-  
-  .light-navbar-nav .nav-item a {
-    color: black;
-  }
-  
-  .nav-item a:hover {
-    color: #183ebc;
-  }
-  
-  .masuk-btn {
-    color: #183ebc;
-    background-color: transparent;
-    outline: 1px solid #3260f7;
-    padding: 8px 22px;
-    font-size: 16px;
-    text-decoration: none;
-    font-weight: 600;
-  }
-  
-  .daftar-btn {
-    color: white;
-    background-color: #183ebc;
-    padding: 8px 22px;
-    font-size: 16px;
-    text-decoration: none;
-    font-weight: 600;
-  }
-  
-  .masuk-btn:hover {
-    background: #2c54d7;
-    color: white;
-  }
-  
-  .daftar-btn:hover {
-    background: #3f67eb;
-    color: white;
-  }
-  
-  @media  (min-width: 500px) {
-    .logo-img {
-      height: 65px;
-      width: 150px;
-    }
-  
-    .logo-img-2 {
-      height: 37px;
-      width: 80px;
-      margin: 15px 20px 0px 0px;
-    }
-  
-    .logo-container {
-      margin-top: 10px;
-      margin-left: 10px;
-    }
 
-    .light-navbar .navbar-collapse {
-      margin-top: -10px;
-      background-color: white;
-    }
+  .logo-container {
+    margin-top: 10px;
+    padding-left: 60px;
+  }
 
-    .navbar-dark .navbar-toggler {
-      margin-top: -10px;
-      margin-right: 10px;
-    }
-  
-    /* .button-container {
-      padding: 10px;
-    } */
-    
+  .navbar-light .navbar-nav .nav-link {
+    margin-left: 100px;
+    margin-right: 30px;
   }
-  
-  @media (min-width: 768px) {  
-    .logo-img {
-      height: 65px;
-      width: 160px;
-    }
+}
+
+@media screen and (min-width: 1024px) {
+  .logo-container {
+    margin-left: 10px;
+  } 
+
+  .button-container {
+    margin-left: 70px;
   }
-  
-  @media (min-width: 992px) {
-    .light-navbar {
-      width: 100%;
-      height: 100px;
-      margin-left: 20px;
-    }
-  
-    .light-navbar-nav {
-      margin-left: 200px;
-    }
-  
-    .logo-container {
-      margin-top: 30px;
-      margin-left: 100px;
-    }
-  
-    .button-container {
-      margin-right: 150px;
-      margin-bottom: 20px;
-    }
+}
+
+@media screen and (min-width: 1440px) {
+  .button-container {
+    margin-left: 150px;
   }
+}
 </style>

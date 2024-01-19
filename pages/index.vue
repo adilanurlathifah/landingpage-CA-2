@@ -66,17 +66,17 @@ export default {
     color: black;
   }
 
-  .index-navbar .navbar {
+  /* .index-navbar .navbar {
     background-color: white;
     position: fixed;
     top: 0;
     width: 100%;
     height: 80px;
-  }
-
+  } */
+/* 
 .index-navbar .nav-collapse {
     background-color: white;
-  }
+  } */
 
   .header img {
     width: 60%;

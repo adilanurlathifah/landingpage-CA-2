@@ -3,7 +3,7 @@
     <div
         class="row col-lg-10 col-md-10 col-sm-12 mx-auto pt-5 flex-lg-row flex-column-reverse">
         <b-col md="6" sm="12" class="pl-2 pr-0 align-self-center">
-          <h2 style="font-size: 2.5rem; font-weight: 700;"> {{ title }}</h2>
+          <h2 style="font-size: 2rem; font-weight: 700;"> {{ title }}</h2>
           <p style="font-size: 20px;"> {{ subtitle }} </p>
           <button v-if="showButton" class="custom-button">Belajar Sekarang</button>
         </b-col>
@@ -36,7 +36,7 @@ export default {
 
 <style>
 .light-header {
-  background-color: white;
+  background-color: #FAFCFF;
   color: black;
   margin-top: 100px;
 }
