@@ -1,21 +1,23 @@
 <template>
-  <div class="light-header">
-    <div
+  <div>
+    <div :class="[theme === 'dark' ? 'dark-header' : 'light-header']">
+      <div
         class="row col-lg-10 col-md-10 col-sm-12 mx-auto pt-5 flex-lg-row flex-column-reverse">
         <b-col md="6" sm="12" class="pl-2 pr-0 align-self-center">
-          <h2 style="font-size: 2rem; font-weight: 700;"> {{ title }}</h2>
+          <h2 style="font-size: 2.5rem; line-height: 1.2; font-weight: 700;"> {{ title }}</h2>
           <p style="font-size: 20px;"> {{ subtitle }} </p>
           <button v-if="showButton" class="custom-button">Belajar Sekarang</button>
         </b-col>
         <b-col md="6" sm="12">
           <b-img
             :src=pageImage
-            style="max-height:400px; width:auto; max-width:100%"
+            style="max-height:500px; width:auto; max-width:100%"
             alt="Responsive image"
             data-aos="fade-up"
           ></b-img>
         </b-col>
       </div>
+    </div>
   </div>
 </template>
 
@@ -29,16 +31,25 @@ export default {
       type: Boolean,
       default: true,
     },
+    theme: {
+      type: String,
+      default: 'light', 
+    },
   },
 };
 </script>
-
 
 <style>
 .light-header {
   background-color: #FAFCFF;
   color: black;
   margin-top: 100px;
+}
+
+.dark-header {
+  background-color: #161D2A;
+  color: white;
+  margin-top: 90px;
 }
 
 .custom-button {
@@ -55,10 +66,4 @@ export default {
   background: #3260f7;
   transition-duration: 0.5s;
 }
-
-/* @media (min-width: 960px) {
-  .col-md-12 {
-      margin-top: 50px;
-  }
-} */
 </style>

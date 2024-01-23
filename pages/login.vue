@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navigation />
+    <Nav :is-dark-mode="false"/>
     <v-form ref="form" class="form-input card" @submit="handleSubmit" :form="form">
       <h5 class="login-title">Masuk Akun Member</h5>
       <div class="login-group">
@@ -64,14 +64,12 @@
 </template>
 
 <script>
-import Navigation from "~/components/landingpage/navigation.vue";
+import Nav from '~/components/landingpage/Nav.vue';
 import apiHelpers from "~/mixins/apiHelpers";
 
 export default {
   mixins: [apiHelpers],
-  components: {
-    Navigation,
-  },
+  components: { Nav },
   props: {
     showLogin: {
       type: Boolean,
@@ -156,6 +154,13 @@ export default {
 </script>
 
 <style scoped>
+
+/* .login-body {
+  width: 100%;
+  height: 100%;
+  background-color: #F5F7FC;
+} */
+
 .form-input.card {
   width: 360px;
   height: 410px;

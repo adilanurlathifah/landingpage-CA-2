@@ -55,11 +55,4 @@ methods: {
   margin-top: -230px;
   width: 960px;
 }
-
-img {
-  /* display: block;
-  margin: 0; */
-  max-height: 100%;
-/* border-radius: 10px; */
-}
 </style>

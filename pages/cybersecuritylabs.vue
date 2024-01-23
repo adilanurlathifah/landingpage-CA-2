@@ -1,14 +1,16 @@
 <template>
   <div>
     <Nuxt/>
-      <DarkNav/>
-      <DarkHeader
+      <Nav isDarkMode="true"/>
+      <Header
         :title="pageTitle"
         :subtitle="pageSubtitle"
         :pageImage="pageImage"
-        :showButton="false" />
+        :showButton="false"
+        theme="dark"
+      />
       <div class="cyberlab-container">
-        <h2 style="text-align: center; padding-top: 50px">Mulai Berlatih dan Ikuti Tantangan Lab yang Menyenangkan</h2>
+        <h2 style="text-align: center;">Mulai Berlatih dan Ikuti Tantangan Lab yang Menyenangkan</h2>
         <div class="container p-md-5 p-2">
             <div class="row g-2 g-md-4 mx-auto py-4 justify-content-center">
                 <div class="col-12 col-md-6">
@@ -143,7 +145,7 @@
     <div class="cyberlab-slider">
       <div class="col-lg-12 col-md-12 col-sm-12 mx-auto mb-5 mt-2 p-0 pt-4">
           <div class="text-center mx-auto w-100 mb-3">
-            <h2 style="color: white; font-weight: 600; margin-top: 25px;">Akses dan Telusuri Semuanya Sekarang juga!</h2>
+            <h2 style="font-size: 30px; font-weight: 700; padding: 40px; line-height: 1.2; color: white;">Akses dan Telusuri Semuanya Sekarang juga!</h2>
           </div>
         <VueSlickCarousel ref="carousel" v-bind="settings">
           <div v-for="data in labs" :key="data.title">
@@ -182,7 +184,7 @@
       </div>
       <div class="client-container">
           <div class="text-center w-100 mb-3">
-            <h2 style="color: white; font-weight: 600;">Telah Dipercaya Oleh</h2>
+            <h2 style="font-size: 30px; font-weight: 700; line-height: 1.2; color: white; margin-bottom: 25px;">Telah Dipercaya Oleh</h2>
             <div class="row col-12 mx-auto justify-content-center">
               <img src="~assets/img/cyberlab/FHUI_white.png" class="mx-2 logo-container"/>
               <img src="~assets/img/cyberlab/telkom_white.png" class="mx-2 logo-container"/>
@@ -191,16 +193,15 @@
             </div>
         </div>
       </div>
-      <DarkFooter />
+      <Footer theme="dark"/>
     </div>
   </div>
 </template>
   
 <script>
-import DarkNav from '~/components/landingpage/dark_nav.vue'
-import DarkFooter from '~/components/landingpage/dark_footer.vue'
-import DarkHeader from '~/components/landingpage/dark_header.vue';
-import CyberlabContent from '~/components/cyberlab_container.vue';
+import Nav from '~/components/landingpage/Nav.vue';
+import Footer from '~/components/landingpage/Footer.vue'
+import Header from '~/components/landingpage/Header.vue';
 import { LABS } from '~/utils/list-lab.json'
 import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
@@ -252,7 +253,7 @@ export default {
             }
         };
     },
-    components: { DarkNav, DarkHeader, DarkFooter, CyberlabContent, VueSlickCarousel }
+    components: { Nav, Header, Footer, VueSlickCarousel }
 };
 </script>
   
@@ -264,7 +265,7 @@ export default {
   }
 
   .listlab-card-body p {
-    color: var(--text-color-3);
+    color: white;
   }
 
   .listlab-card-body {
@@ -292,8 +293,7 @@ export default {
 
   .cyberlab-container h2 {
     text-align: center; 
-    padding-top: 10px; 
-    padding-bottom: 20px; 
+    padding: 40px;
     font-weight: 700;
     font-size: 30px;
   }
@@ -319,8 +319,8 @@ export default {
   }
 
   .client-container h2 {
-    padding-top: 50px; 
-    padding-bottom: 10px; 
+    text-align: center; 
+    padding: 10px 20px 0px 20px;
     font-weight: 700;
     font-size: 30px;
   }
@@ -350,14 +350,14 @@ export default {
   }
   
   .header h2 {
-    color: var(--text-color);
-    font-size: 36px;
+    text-align: center; 
+    padding: 10px 20px 40px 20px;
     font-weight: 700;
-    margin-top: 20px;
+    font-size: 30px;
   }
   
   .header p {
-    color: var(--text-color);
+    color: white;
     font-size: 17px;
     font-weight: 400;
     margin-bottom: 16px;

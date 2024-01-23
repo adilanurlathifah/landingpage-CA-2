@@ -1,40 +1,11 @@
 html,
 body {
+    background-color: #FAFCFF;
+    color: black;
     font-family: 'Montserrat', sans-serif;
 }
 
-:root {
-    --bg-cda: #FAFCFF; 
-    --text-color: #161D2A;
-    --text-color-2: #FAFCFF;
-    --text-color-3: #FAFCFF;
-    --text-color-4: #161D2A;
-    --bg-container: #F6F8FF;
-    --bg-container-2: #F6F8FF;
-    --accent-color: #1239B5;
-    --accent-color-2: #384cdc;
-    --btn-color: #2839BC;
-    --element-size: 60px;
-    --additional-color: #FFFFFF;
-    --additional-color-2: #161D2A;
-    --sm-text-size: 16px;
-    --md-text-size: 20px;
-    --lg-text-size: 30px;
-    --xl-text-size: 2.5rem;
-}
-  
-.dark-theme {
-    --bg-cda: #161D2A; 
-    --bg-container: #121926;
-    --bg-container-2: #0f31a1;
-    /* warna card */
-    --card-color: #1E2739;
-    --btn-color: #FFFFFF;
-    --text-color: #FAFCFF;
-    /* --text-color-2: #161D2A;
-    --text-color-3: #FAFCFF;
-    --text-color-4: #FAFCFF; */
-    --accent-color: #FFFFFF;
-    --additional-color: #121926;
-    --additional-color-2: #161D2A;
+img {
+    display: block;
+    max-height: 100%;
 }

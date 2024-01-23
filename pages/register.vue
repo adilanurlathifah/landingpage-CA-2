@@ -1,6 +1,6 @@
 <template>
     <div>
-      <Navigation />
+      <Nav :is-dark-mode="false"/>
       <v-form class="form-input card" v-model="valid">
           <h5 class="register-title">Daftar Akun Member</h5>
           <button type="button" class="btn-google">
@@ -47,12 +47,12 @@
 </template>
   
 <script>
- import Footer from "~/components/landingpage/footer.vue";
- import Navigation from "~/components/landingpage/navigation.vue";
+ import Footer from "~/components/landingpage/Footer.vue";
+ import Nav from '~/components/landingpage/Nav.vue';
   
   export default {
     auth: false,
-    components: { Navigation, Footer },
+    components: { Nav, Footer },
     data() {
       return {
       };
