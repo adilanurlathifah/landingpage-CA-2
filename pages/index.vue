@@ -1,6 +1,6 @@
 <template>
   <div class="index-body">
-      <Nav :is-dark-mode="false"/>
+      <Nav/>
       <Header
         :title="pageTitle"
         :subtitle="pageSubtitle"

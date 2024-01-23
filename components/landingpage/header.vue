@@ -6,7 +6,7 @@
         <b-col md="6" sm="12" class="pl-2 pr-0 align-self-center">
           <h2 style="font-size: 2.5rem; line-height: 1.2; font-weight: 700;"> {{ title }}</h2>
           <p style="font-size: 20px;"> {{ subtitle }} </p>
-          <button v-if="showButton" class="custom-button">Belajar Sekarang</button>
+          <button v-show="showButton" class="custom-button">Belajar Sekarang</button>
         </b-col>
         <b-col md="6" sm="12">
           <b-img

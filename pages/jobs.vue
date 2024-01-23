@@ -6,9 +6,8 @@
             :subtitle="pageSubtitle"
             :pageImage="pageImage"
             :showButton="false"
-            theme="light"
         />
-        <Footer theme="light" />
+        <Footer/>
     </div>
 </template>
 
