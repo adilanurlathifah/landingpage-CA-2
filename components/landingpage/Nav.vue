@@ -306,7 +306,7 @@ export default {
   }
   
   .logo-container {
-    margin-left: 0px;
+    margin-left: -7px;
     margin-top: 0px;
     gap: 5px;
   }
@@ -360,7 +360,7 @@ export default {
   }
 
   #nav-collapse {
-    margin: 10px 0px 0px 100px;
+    margin: 10px 0px 0px 60px;
   }
 
   .light-nav-list ul {
@@ -372,7 +372,7 @@ export default {
 
   .logo-container {
     margin-top: 10px;
-    padding-left: 60px;
+    padding-left: 40px;
   }
 
   .navbar-light .navbar-nav .nav-link {

@@ -1,7 +1,7 @@
 <template>
   <div>
     <Nuxt/>
-      <Nav isDarkMode="true"/>
+      <Nav :isDarkMode="true"/>
       <Header
         :title="pageTitle"
         :subtitle="pageSubtitle"
